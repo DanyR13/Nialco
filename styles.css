@@ -11,23 +11,19 @@ body {
   padding: 2rem;
 }
 .navbar {
-  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.logo-text {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #263D52;
+  background-color: #263D52;
+  color: #ffffff;
 }
 nav a {
   margin-left: 1rem;
-  color: #263D52;
   font-weight: 500;
   text-decoration: none;
+  color: #ffffff;
 }
 .hero-modern {
   background: linear-gradient(to bottom right, #f7efe1, #fffaf0);
@@ -99,6 +95,7 @@ nav a {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #263D52;
 }
 .catalogo-sub {
   text-align: center;
@@ -114,7 +111,7 @@ nav a {
 }
 .product-card {
   background-color: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #D0A369;
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
@@ -177,33 +174,6 @@ nav a {
 }
 .contact-form button:hover {
   background-color: #b78940;
-}
-
-.logo-flex {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo-icon {
-  height: 40px;
-}
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-.navbar {
-  background-color:   #263D52;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-}
-nav a {
-  color: #ffffff;
-}
-.catalogo-title {
-  color: #263D52;
-}
-.product-card {
-  border: 1px solid #D0A369;
 }
 .product-card h3 {
   color: #263D52;
