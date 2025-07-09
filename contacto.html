@@ -3,20 +3,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacto | Grupo Nialco</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contacto-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 4rem 2rem;
+      text-align: center;
+      animation: fadeIn 1.4s ease-out both;
+    }
+
+    .contacto-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contacto-container p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .formulario-contacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .formulario-contacto textarea {
+      grid-column: span 2;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .formulario-contacto button {
+      grid-column: span 2;
+      background-color: #D0A369;
+      color: white;
+      font-weight: bold;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .formulario-contacto button:hover {
+      background-color: #b88a40;
+    }
+
+    .info-contacto p {
+      margin: 0.3rem 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    
-<div class="logo-completo">
-  <img src="img/logo-nialco-dorado.png" class="logo-img-fixed" alt="Logo Nialco" class="logo-img">
-  <span class="logo-text">Grupo Nialco</span>
-</div>
-
+  <header>
+    <div class="logo">
+      <span><strong>Grupo Nialco</strong></span>
+    </div>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
@@ -25,30 +89,27 @@
     </nav>
   </header>
 
-  <main class="main-page">
-    <div class="container contacto-contenido">
-      <h1 data-aos="fade-up">Contáctanos</h1>
-      <p data-aos="fade-up">¿Quieres más información o cotización? Escríbenos:</p>
-      <form class="contact-form" data-aos="fade-up">
-        <input type="text" placeholder="Nombre completo" required />
-        <input type="email" placeholder="Correo electrónico" required />
-        <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit">Enviar mensaje</button>
-      </form>
-      <div class="contact-info" data-aos="fade-up">
-        <p><strong>Correo:</strong> <a href="mailto:ventas1@nialco.com.mx">ventas1@nialco.com.mx</a></p>
-        <p><strong>Teléfono:</strong> 614 614 8161</p>
-      </div>
+  <main class="contacto-container">
+    <h1>Contáctanos</h1>
+    <p>¿Tienes dudas o deseas más información sobre nuestros productos? Envíanos un mensaje:</p>
+
+    <form class="formulario-contacto" action="#" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <input type="text" name="asunto" placeholder="Asunto" />
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <div class="info-contacto">
+      <p><strong>Teléfono:</strong> 614 123 4567</p>
+      <p><strong>Correo:</strong> contacto@gruponialco.com</p>
+      <p><strong>Dirección:</strong> Chihuahua, México</p>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
-    </div>
+  <footer>
+    <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>

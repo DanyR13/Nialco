@@ -1,117 +1,429 @@
-
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo | Grupo Nialco</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Catálogo de Productos | Grupo Nialco
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo-flex">
-      <img src="img/logo-dorado.png" alt="Grupo Nialco" class="logo-icon">
-      <span class="logo-text">Grupo Nialco</span>
-    </div>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="catalogo.html" class="active">Catálogo</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<header>
+<div class="logo">
+<span>
+<strong>
+      Grupo Nialco
+     </strong>
+</span>
+</div>
+<nav>
+<a href="index.html">
+     Inicio
+    </a>
+<a href="nosotros.html">
+     Nosotros
+    </a>
+<a class="active" href="catalogo.html">
+     Catálogo
+    </a>
+<a href="contacto.html">
+     Contacto
+    </a>
+</nav>
+</header>
+<section class="hero redesigned-hero">
+<div class="hero-container">
+<div class="hero-left">
+<h1>
+      Explora nuestro catálogo
+     </h1>
+<p>
+      Descubre la variedad de productos que ofrecemos con calidad garantizada y atención personalizada.
+     </p>
+</div>
+<div class="hero-right">
+<img alt="Productos Grupo Nialco" onerror="this.src='img/placeholder.png'" src="img/catalogo_img.png"/>
+</div>
+</div>
+</section>
+<style>
+   .redesigned-hero {
+    background: linear-gradient(to right, #D0A369, #F7E9D4);
+    padding: 4rem 2rem;
+  }
 
-  <main class="main-catalogo">
-    <div class="container">
-      <h1 class="catalogo-title" data-aos="fade-up">Nuestro Catálogo</h1>
-      <p class="catalogo-sub" data-aos="fade-up">Explora la variedad de productos disponibles para tu negocio</p>
-      <div class="product-grid">
+  .hero-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_1.jpg" alt="Producto 1" class="product-img"/>
-          <h3>Producto 1</h3>
-          <p>Descripción correspondiente al producto 1.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_2.jpg" alt="Producto 2" class="product-img"/>
-          <h3>Producto 2</h3>
-          <p>Descripción correspondiente al producto 2.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_3.jpg" alt="Producto 3" class="product-img"/>
-          <h3>Producto 3</h3>
-          <p>Descripción correspondiente al producto 3.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_4.jpg" alt="Producto 4" class="product-img"/>
-          <h3>Producto 4</h3>
-          <p>Descripción correspondiente al producto 4.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_5.jpg" alt="Producto 5" class="product-img"/>
-          <h3>Producto 5</h3>
-          <p>Descripción correspondiente al producto 5.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_6.jpg" alt="Producto 6" class="product-img"/>
-          <h3>Producto 6</h3>
-          <p>Descripción correspondiente al producto 6.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_7.jpg" alt="Producto 7" class="product-img"/>
-          <h3>Producto 7</h3>
-          <p>Descripción correspondiente al producto 7.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_8.jpg" alt="Producto 8" class="product-img"/>
-          <h3>Producto 8</h3>
-          <p>Descripción correspondiente al producto 8.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_9.jpg" alt="Producto 9" class="product-img"/>
-          <h3>Producto 9</h3>
-          <p>Descripción correspondiente al producto 9.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_10.jpg" alt="Producto 10" class="product-img"/>
-          <h3>Producto 10</h3>
-          <p>Descripción correspondiente al producto 10.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_11.jpg" alt="Producto 11" class="product-img"/>
-          <h3>Producto 11</h3>
-          <p>Descripción correspondiente al producto 11.</p>
-        </div>
-    
-        <div class="product-card" data-aos="zoom-in">
-          <img src="img/producto_12.jpg" alt="Producto 12" class="product-img"/>
-          <h3>Producto 12</h3>
-          <p>Descripción correspondiente al producto 12.</p>
-        </div>
-    
-      </div>
-    </div>
-  </main>
+  .hero-left {
+    flex: 1 1 450px;
+    text-align: left;
+  }
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  .hero-left h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #263D52;
+  }
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  .hero-left p {
+    font-size: 1.2rem;
+    color: #444;
+    font-weight: 500;
+    max-width: 500px;
+  }
+
+  .hero-right {
+    flex: 1 1 350px;
+    text-align: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .hero-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-left, .hero-right {
+      flex: 1 1 100%;
+    }
+    .hero-left h1 {
+      font-size: 2.2rem;
+    }
+    .hero-left p {
+      font-size: 1rem;
+    }
+  }
+  </style>
+<section class="catalog-section">
+<div class="product-grid">
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Chile Jalapeño en Rodajas" onerror="this.src='img/placeholder.png'" src="img/placeholder.png"/>
+</div>
+<h3>
+      Chile Jalapeño en Rodajas
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Chile Cascabel Curtido" onerror="this.src='img/placeholder.png'" src="img/placeholder.png"/>
+</div>
+<h3>
+      Chile Cascabel Curtido
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Chile Jalapeño Entero" onerror="this.src='img/placeholder.png'" src="img/productos/CHILES-ENTEROS-NIALCO.png"/>
+</div>
+<h3>
+      Chile Jalapeño Entero
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Chile Jalapeño en Rajas" onerror="this.src='img/placeholder.png'" src="img/productos/RAJAS-NIALCO.png"/>
+</div>
+<h3>
+      Chile Jalapeño en Rajas
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Chile Güero" onerror="this.src='img/placeholder.png'" src="img/productos/gueritos-bolsa.png"/>
+</div>
+<h3>
+      Chile Güero
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Pepinillo Rebanado" onerror="this.src='img/placeholder.png'" src="img/productos/PEPINILLOS-NIALCO.png"/>
+</div>
+<h3>
+      Pepinillo Rebanado
+     </h3>
+<p>
+      Presentación: 3 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Pizzero" onerror="this.src='img/placeholder.png'" src="img/productos/queso-pizzero.png"/>
+</div>
+<h3>
+      Queso Pizzero
+     </h3>
+<p>
+      Presentación: 2 KGS
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Pizzero" onerror="this.src='img/placeholder.png'" src="img/productos/queso-pizzero.png"/>
+</div>
+<h3>
+      Queso Pizzero
+     </h3>
+<p>
+      Presentación: 5 KGS
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Imitación Queso Amarillo Rebanado" onerror="this.src='img/placeholder.png'" src="img/productos/imitación-queso-amarillo-rebanado.png"/>
+</div>
+<h3>
+      Imitación Queso Amarillo Rebanado
+     </h3>
+<p>
+      Presentación: 1.8 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Imitación Queso Manchego Rebanado" onerror="this.src='img/placeholder.png'" src="img/productos/imitación-queso-manchego-rebanado.png"/>
+</div>
+<h3>
+      Imitación Queso Manchego Rebanado
+     </h3>
+<p>
+      Presentación: 1.8 KG
+     </p>
+<p>
+      Marca: NIALCO FOODS
+     </p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chihuahua" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHIHUAHUA.png"/>
+</div>
+<h3>Queso Chihuahua</h3>
+<p>Presentación: 454 GRRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chihuahua" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHIHUAHUA.png"/>
+</div>
+<h3>Queso Chihuahua</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chihuahua" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHIHUAHUA.png"/>
+</div>
+<h3>Queso Chihuahua</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chester" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHESTER.png"/>
+</div>
+<h3>Queso Chester</h3>
+<p>Presentación: 454 GRRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chester" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHESTER.png"/>
+</div>
+<h3>Queso Chester</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chester" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-CHESTER.png"/>
+</div>
+<h3>Queso Chester</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Manchego" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MANCHEGO.png"/>
+</div>
+<h3>Queso Manchego</h3>
+<p>Presentación: 454 GRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Manchego" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MANCHEGO.png"/>
+</div>
+<h3>Queso Manchego</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Manchego" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MANCHEGO.png   "/>
+</div>
+<h3>Queso Manchego</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Mozarella" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MOZZARELLA.png"/>
+</div>
+<h3>Queso Mozarella</h3>
+<p>Presentación: 454 GRRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Mozarella" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MOZZARELLA.png"/>
+</div>
+<h3>Queso Mozarella</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Mozarella" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MOZZARELLA.png"/>
+</div>
+<h3>Queso Mozarella</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Gouda" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-GOUDA.png"/>
+</div>
+<h3>Queso Gouda</h3>
+<p>Presentación: 454 GRRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Gouda" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-GOUDA.png"/>
+</div>
+<h3>Queso Gouda</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Gouda" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-GOUDA.png"/>
+</div>
+<h3>Queso Gouda</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MONTEREY JACK.png"/>
+</div>
+<h3>Queso Monterrey Jack</h3>
+<p>Presentación: 454 GRRS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MONTEREY JACK.png"/>
+</div>
+<h3>Queso Monterrey Jack</h3>
+<p>Presentación: 3.3 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.png'" src="img/productos/MONTELIA-MONTEREY JACK.png"/>
+</div>
+<h3>Queso Monterrey Jack</h3>
+<p>Presentación: 2 KGS</p>
+<p>Marca: MONTELIA</p>
+</div>
+</div>
+</section>
+<footer>
+<p>
+    © 2025 Grupo Nialco. Todos los derechos reservados.
+   </p>
+</footer>
 </body>
 </html>

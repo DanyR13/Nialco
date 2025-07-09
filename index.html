@@ -1,72 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grupo Nialco</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Inicio | Grupo Nialco</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    .hero {
+      background-image: url('img/fondo-nialco.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 250, 242, 0.8);
+      z-index: 0;
+    }
+
+    .hero > div {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1.3s ease both;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #263D52;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    .feature {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 4rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    
-<div class="logo-completo">
-  <img src="img/logo-nialco-dorado.png" class="logo-img-fixed" alt="Logo Nialco" class="logo-img">
-  <span class="logo-text">Grupo Nialco</span>
-</div>
-
+  <header>
+    <div class="logo">
+      <span><strong>Grupo Nialco</strong></span>
+    </div>
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.html" class="active">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="catalogo.html">Catálogo</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <section class="hero-modern" data-aos="fade-up">
-    <div class="container">
-      <h1>Creamos soluciones alimenticias personalizadas</h1>
-      <p>Distribuimos productos de alta calidad a negocios y distribuidores en todo México</p>
-      <a href="catalogo.html" class="btn-primary">Ver catálogo completo</a>
+  <section class="hero">
+    <div>
+      <h1>Distribuimos calidad a tu negocio</h1>
+      <p>Somos Grupo Nialco, expertos en alimentos e insumos confiables.</p>
+      <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
     </div>
   </section>
 
-  <section class="features" data-aos="fade-up">
-    <div class="container">
-      <h2>Nuestros productos</h2>
-      <div class="cards">
-        <div class="card" data-aos="zoom-in">
-          <h3>🧀 Lácteos</h3>
-          <p>Quesos 100% leche, rebanados y fundidores.</p>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>🌶️ Conservas</h3>
-          <p>Chiles jalapeños, cascabel y productos curtidos.</p>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>🥫 Abarrotes</h3>
-          <p>Salsas, piña, pepinillos y más.</p>
-        </div>
+  <section class="section">
+    <h2>Por qué elegirnos</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Productos seleccionados</h3>
+        <p>Alimentos de calidad certificada y excelente sabor.</p>
+      </div>
+      <div class="feature">
+        <h3>Atención personalizada</h3>
+        <p>Soluciones adaptadas a las necesidades de tu negocio.</p>
+      </div>
+      <div class="feature">
+        <h3>Compromiso y puntualidad</h3>
+        <p>Entregas seguras, a tiempo y en condiciones óptimas.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta" data-aos="fade-up">
-    <div class="container">
-      <h2>¿Tienes un restaurante, cocina o negocio?</h2>
-      <p>En Nialco encontrarás el proveedor ideal con la calidad y el sabor que buscas.</p>
-      <a href="contacto.html" class="btn-secondary">Contáctanos ahora</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
-    </div>
+  <footer>
+    <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>

@@ -1,233 +1,226 @@
 
-body {
+/* === Reset básico === */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: #fffaf2;
+  color: #263D52;
+  line-height: 1.6;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-.navbar {
-  background-color: #ffffff;
+
+/* === Cabecera === */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.logo-text {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #263D52;
-}
-nav a {
-  margin-left: 1rem;
-  color: #263D52;
-  font-weight: 500;
-  text-decoration: none;
-}
-.hero-modern {
-  background: linear-gradient(to bottom right, #f7efe1, #fffaf0);
-  text-align: center;
-  padding: 6rem 2rem;
-}
-.hero-modern h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-.hero-modern p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-.btn-primary {
-  background-color: #D0A369;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-}
-.features h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.cards {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.card {
-  background-color: white;
-  border: 1px solid #eee;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 300px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-.cta {
-  background-color: #263D52;
-  color: white;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-.btn-secondary {
-  background-color: #D0A369;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-}
-.footer {
-  background-color: #D0A369;
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #ffffff;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.main-catalogo {
-  padding: 3rem 0;
-}
-.catalogo-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-.catalogo-sub {
-  text-align: center;
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-  padding: 0 1rem;
-}
-.product-card {
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-  transition: transform 0.3s ease;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.main-page {
-  padding: 3rem 0;
-}
-.intro-text {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 2rem;
-}
-.valores-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-.valor-card {
-  background: #fff;
-  border: 1px solid #eee;
-  padding: 1.5rem;
-  border-radius: 10px;
-  max-width: 300px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-  text-align: center;
-}
-.contacto-contenido {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.contact-form button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #D0A369;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.contact-form button:hover {
-  background-color: #b78940;
-}
-
-.logo-flex {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.logo-icon {
+
+.logo img {
   height: 40px;
 }
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-.navbar {
-  background-color:   #263D52;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-}
+
 nav a {
-  color: #ffffff;
-}
-.catalogo-title {
+  text-decoration: none;
   color: #263D52;
-}
-.product-card {
-  border: 1px solid #D0A369;
-}
-.product-card h3 {
-  color: #263D52;
-}
-.product-card .product-img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 0.75rem;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease;
 }
 
-.logo-completo {
+nav a:hover {
+  color: #D0A369;
+}
+
+/* === Hero Section === */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  color: #313131;
 }
-.logo-img-fixed {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 250, 242, 0.6);
+  z-index: 0;
 }
-.logo-text {
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
   font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background-color: #D0A369;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b88a40;
+}
+
+/* === Secciones generales === */
+.section, .catalog-section, .about-section, .contacto-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2, .catalog-section h1, .about-section h1, .contacto-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === Cards === */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  max-width: 300px;
+  text-align: center;
+}
+
+/* === Catálogo === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  margin: 0.5rem 0;
   font-size: 1.2rem;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
+}
+
+.product-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* === Formulario contacto === */
+.formulario-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.formulario-contacto textarea {
+  grid-column: span 2;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formulario-contacto button {
+  background-color: #D0A369;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  grid-column: span 2;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #b88a40;
+}
+
+/* === Footer === */
+footer {
+  background-color: #263D52;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .formulario-contacto {
+    grid-template-columns: 1fr;
+  }
 }
