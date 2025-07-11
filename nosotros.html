@@ -1,84 +1,478 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros | Grupo Nialco</title>
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    .about-section {
-      padding: 4rem 2rem;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #fffaf2, #fce9d8);
+      color: #263D52;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background-color: #ffffffcc;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #D0A369;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #263D52;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #D0A369;
+    }
+    section {
       max-width: 1100px;
       margin: auto;
-      animation: fadeIn 1.4s ease-out both;
+      padding: 5rem 2rem;
+      animation: fadeIn 1s ease-in-out both;
     }
-
-    .about-section h1 {
-      font-size: 2.8rem;
+    h1, h2 {
+      font-size: 2.5rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #263D52;
+      animation: bounceIn 0.8s ease both;
     }
-
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .about-content p {
-      font-size: 1.15rem;
+    p {
+      font-size: 1.1rem;
       line-height: 1.8;
       color: #444;
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+      animation: fadeInUp 1.3s ease both;
     }
-
-    .about-content p:hover {
-      transform: translateY(-5px);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
-
+    .card {
+      background: linear-gradient(to top right, #fff, #f9f0e2);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      animation: fadeInUp 1.5s ease-in-out both;
+    }
+    .card i {
+      font-size: 2rem;
+      color: #D0A369;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #263D52;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <span><strong>Grupo Nialco</strong></span>
-    </div>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html" class="active">Nosotros</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: linear-gradient(to right, #ffffffdd, #fdf4e3); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999;">
+  <div class="logo" style="flex: 1;">
+    <img src="img/logo_grupo_nialco.webp" alt="Logo Grupo Nialco" style="height: 90px; display: block;">
+  </div>
+  <nav style="flex: 2; text-align: right;">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="nosotros.html" class="nav-link">Nosotros</a>
+    <a href="catalogo.html" class="nav-link">Catálogo</a>
+    <a href="contacto.html" class="nav-link">Contacto</a>
+  </nav>
+</header>
 
-  <section class="about-section">
-    <h1>Sobre Nosotros</h1>
-    <div class="about-content">
-      <p>
-        En <strong>Grupo Nialco</strong> somos una empresa dedicada a la distribución de productos alimenticios de alta calidad. Con una amplia experiencia en el mercado, nuestro compromiso es brindar soluciones confiables y eficientes a negocios del sector alimentario.
-      </p>
-      <p>
-        Trabajamos con marcas reconocidas como <strong>Nialco Foods</strong> y <strong>Montelia</strong>, garantizando productos frescos, seguros y con el respaldo que nuestros clientes necesitan para hacer crecer su negocio.
-      </p>
-      <p>
-        Nuestra pasión por la excelencia, el servicio personalizado y la puntualidad en cada entrega nos han posicionado como aliados estratégicos en la industria. Estamos listos para servirte.
-      </p>
-    </div>
-  </section>
+<style>
+  .nav-link {
+    margin: 0 1rem;
+    font-weight: 600;
+    color: #263D52;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background-color: #D0A369;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #D0A369;
+    transform: translateY(-2px);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
 
-  <footer>
-    <p>&copy; 2025 Grupo Nialco. Todos los derechos reservados.</p>
-  </footer>
+
+  <section style="background: #fff; padding: 5rem 2rem; animation: fadeInUp 1s ease-in-out both;">
+  <div style="max-width: 1000px; margin: auto;">
+    <h1 style="text-align: center; font-size: 3rem; margin-bottom: 2rem; animation: bounceIn 0.8s ease both;">
+      Nuestra Historia
+    </h1>
+    <p style="font-size: 1.15rem; line-height: 1.8; color: #444; text-align: justify; animation: fadeInLeft 1.2s ease both;">
+      Nialco nació del sueño compartido de un grupo de amigos en Chihuahua que creyeron en el poder del trabajo en equipo,
+      la confianza y el compromiso verdadero. No querían solo crear una empresa: querían construir una solución viva, con propósito
+      y corazón.
+    </p>
+    <p style="font-size: 1.15rem; line-height: 1.8; color: #444; text-align: justify; animation: fadeInRight 1.4s ease both;">
+      Desde nuestros inicios nos hemos enfocado en ofrecer no solo productos, sino experiencias que reflejen nuestros valores:
+      cercanía, honestidad, innovación y servicio. Con el paso de los años, nuestra esencia no ha cambiado: seguimos caminando
+      junto a cada cliente como socios, como aliados, como amigos.
+    </p>
+    <blockquote style="margin-top: 2rem; font-style: italic; font-size: 1.2rem; color: #D0A369; text-align: center; animation: fadeInUp 1.6s ease both;">
+      “No vendemos productos, creamos relaciones que duran toda una vida.”
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<section style="padding: 5rem 2rem; background: #fffefb; animation: fadeIn 1s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="font-size: 2.8rem; text-align: center; margin-bottom: 3rem; animation: bounceIn 0.8s ease both;">
+      Misión & Visión
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;">
+      <!-- Misión -->
+      <div style="flex: 1 1 400px; background: linear-gradient(to top, #fffaf2, #fce9d8); padding: 2rem 2rem 2.5rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.07); animation: fadeInLeft 1.2s ease-in-out both;">
+        <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem; color: #D0A369;">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3 style="font-size: 1.6rem; text-align: center; color: #263D52; margin-bottom: 1rem;">Nuestra Misión</h3>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: #444;">
+          Ser una empresa cercana, confiable y apasionada por entregar soluciones reales a nuestros clientes. Queremos ser ese socio que escucha, resuelve y acompaña en cada paso. Nuestro compromiso es contigo, con tu marca y con tus metas.
+        </p>
+        <p style="margin-top: 1rem; font-style: italic; text-align: center; color: #888;">
+          “Soluciones con propósito, relaciones con alma.”
+        </p>
+      </div>
+
+      <!-- Visión -->
+      <div style="flex: 1 1 400px; background: linear-gradient(to top, #fffaf2, #fce9d8); padding: 2rem 2rem 2.5rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.07); animation: fadeInRight 1.2s ease-in-out both;">
+        <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem; color: #D0A369;">
+          <i class="fas fa-eye"></i>
+        </div>
+        <h3 style="font-size: 1.6rem; text-align: center; color: #263D52; margin-bottom: 1rem;">Nuestra Visión</h3>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: #444;">
+          Ser reconocidos como una marca humana, innovadora y fiel a sus principios. Queremos que Grupo Nialco sea sinónimo de evolución, confianza y calidad, mientras acompañamos a nuestros clientes a alcanzar sus sueños empresariales.
+        </p>
+        <p style="margin-top: 1rem; font-style: italic; text-align: center; color: #888;">
+          “No solo crecemos. Hacemos crecer a quienes creen en nosotros.”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<section style="padding: 5rem 2rem; background: #f9f6f2; animation: fadeInUp 1s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 2.5rem; animation: bounceIn 0.8s ease both;">
+      Logística y Cobertura Nacional
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+      <div style="flex: 1 1 500px; animation: fadeInLeft 1.2s ease both;">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444; text-align: justify;">
+          En Nialco, nuestra infraestructura logística es el corazón que impulsa cada entrega. Contamos con <strong>168 espacios de almacenaje estratégicamente distribuidos</strong> en todo México, lo que nos permite responder con agilidad, precisión y compromiso a cada cliente.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+          Nuestro sistema de <strong>trazabilidad en tiempo real</strong> permite monitorear cada pedido desde el origen hasta su destino, asegurando que cada caja llegue en las mejores condiciones y justo a tiempo.
+        </p>
+        <ul style="margin-top: 1.5rem; list-style: none; padding: 0; font-size: 1.05rem; color: #263D52;">
+          <li><i class="fas fa-truck" style="color:#D0A369; margin-right: 8px;"></i> Entrega nacional a mayoristas y minoristas</li>
+          <li><i class="fas fa-map-marked-alt" style="color:#D0A369; margin-right: 8px;"></i> Cobertura total a los 32 estados</li>
+          <li><i class="fas fa-clock" style="color:#D0A369; margin-right: 8px;"></i> Rutas optimizadas y entregas puntuales</li>
+          <li><i class="fas fa-database" style="color:#D0A369; margin-right: 8px;"></i> Plataforma digital para seguimiento de pedidos</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 500px; text-align: center; animation: fadeInRight 1.2s ease both;">
+        <i class="fas fa-warehouse" style="font-size: 6rem; color: #D0A369;"></i>
+        <p style="font-weight: bold; margin-top: 1rem; color: #555;">¡Más de 160 almacenes en operación nacional!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<section style="padding: 6rem 2rem; background: linear-gradient(to bottom right, #fffdf7, #fef1db); animation: fadeInUp 1s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="font-size: 3rem; text-align: center; margin-bottom: 3rem; color: #263D52; animation: bounceIn 0.8s ease both;">
+      Nuestras Marcas
+    </h2>
+
+    <p style="font-size: 1.2rem; line-height: 1.8; color: #555; text-align: center; max-width: 800px; margin: auto;">
+      Desarrollamos nuestras marcas con pasión y estrategia. Cada una tiene su esencia, su historia y una misión clara: conquistar paladares con calidad y confianza.
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin-top: 4rem;">
+      <!-- Nialco Foods -->
+      <div style="flex: 1 1 350px; text-align: center; background: #ffffff; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.07); animation: fadeInLeft 1.2s ease both; transition: transform 0.3s ease;">
+        <img src="img/logo_1.webp" alt="Logo Nialco Foods" style="max-width: 180px; margin-bottom: 1.5rem;">
+        <h3 style="color: #263D52; font-size: 1.6rem;">Nialco Foods</h3>
+        <p style="font-size: 1.05rem; color: #555; margin-top: 1rem;">
+          Marca insignia de alimentos de alta calidad. Pensada para negocios exigentes y clientes que buscan sabor, presentación y confianza.
+        </p>
+      </div>
+
+      <!-- Salsas -->
+      <div style="flex: 1 1 350px; text-align: center; background: #ffffff; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.07); animation: fadeInRight 1.2s ease both; transition: transform 0.3s ease;">
+        <img src="img/logo_2.webp" alt="Logo Salsas" style="max-width: 180px; margin-bottom: 1.5rem;">
+        <h3 style="color: #263D52; font-size: 1.6rem;">Salsas</h3>
+        <p style="font-size: 1.05rem; color: #555; margin-top: 1rem;">
+          Línea especializada en aderezos, botanas y sabores auténticos. Tradición mexicana embotellada con estilo moderno.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+<section style="padding: 6rem 2rem; background: linear-gradient(to bottom right, #fffaf2, #fce9d8); animation: fadeInUp 1s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="font-size: 2.8rem; text-align: center; margin-bottom: 2.5rem; animation: bounceIn 0.8s ease both;">
+      Tu Marca Propia
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+      <div style="flex: 1 1 500px; animation: fadeInLeft 1.2s ease both;">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+          En <strong>Nialco</strong> entendemos que cada negocio tiene alma propia. Por eso, ofrecemos el desarrollo de productos 100% personalizados con tu propia marca.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+          Fortalece tu identidad comercial, conquista el mercado y destaca con una imagen sólida y memorable.
+        </p>
+
+        <ul style="margin-top: 1.5rem; list-style: none; padding: 0; font-size: 1.05rem; color: #263D52;">
+          <li><i class="fas fa-dollar-sign" style="color:#D0A369; margin-right: 8px;"></i> Rentabilidad</li>
+          <li><i class="fas fa-star" style="color:#D0A369; margin-right: 8px;"></i> Diferenciación</li>
+          <li><i class="fas fa-check-circle" style="color:#D0A369; margin-right: 8px;"></i> Calidad garantizada</li>
+          <li><i class="fas fa-bullhorn" style="color:#D0A369; margin-right: 8px;"></i> Branding propio</li>
+          <li><i class="fas fa-heart" style="color:#D0A369; margin-right: 8px;"></i> Fidelización del cliente</li>
+        </ul>
+      </div>
+
+      <div style="flex: 1 1 500px; text-align: center; animation: fadeInRight 1.2s ease both;">
+        <img src="img/tu_marca.webp" alt="Tu Marca Propia" style="max-width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section style="padding: 6rem 2rem; background: linear-gradient(to bottom, #fdfaf5, #fff1de); animation: fadeInUp 1s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="font-size: 3rem; text-align: center; margin-bottom: 2.5rem; color: #263D52; animation: bounceIn 0.8s ease both;">
+      Distribución Nacional Inteligente
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+      <!-- Texto -->
+      <div style="flex: 1 1 500px; animation: fadeInLeft 1.2s ease both;">
+        <p style="font-size: 1.15rem; line-height: 1.8; color: #444; text-align: justify;">
+          En <strong>Nialco</strong>, conectamos los mejores productos con todos los rincones de México. Nuestra red logística está diseñada para atender desde grandes cadenas hasta pequeños negocios, siempre con eficiencia, trazabilidad y compromiso.
+        </p>
+        <p style="font-size: 1.15rem; line-height: 1.8; color: #444;">
+          Gracias a nuestras plataformas inteligentes, cada entrega es planificada, monitoreada y optimizada en tiempo real. Contamos con una flotilla diversificada y alianzas estratégicas en los 32 estados del país.
+        </p>
+
+        <ul style="margin-top: 1.5rem; list-style: none; padding: 0; font-size: 1.05rem; color: #263D52;">
+          <li><i class="fas fa-map-marked-alt" style="color:#D0A369; margin-right: 8px;"></i> Cobertura nacional garantizada</li>
+          <li><i class="fas fa-truck-moving" style="color:#D0A369; margin-right: 8px;"></i> Entregas rápidas y seguras</li>
+          <li><i class="fas fa-cogs" style="color:#D0A369; margin-right: 8px;"></i> Rutas automatizadas con IA logística</li>
+          <li><i class="fas fa-clipboard-check" style="color:#D0A369; margin-right: 8px;"></i> Trazabilidad en cada etapa</li>
+        </ul>
+      </div>
+
+      <!-- Ilustración o ícono -->
+      <div style="flex: 1 1 480px; text-align: center; animation: fadeInRight 1.2s ease both;">
+        <i class="fas fa-shipping-fast" style="font-size: 6rem; color: #D0A369;"></i>
+        <p style="font-weight: bold; font-size: 1.05rem; margin-top: 1rem; color: #555;">
+          Cada pedido es una misión cumplida, no un número más.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+
+<footer style="background: linear-gradient(to right, #263D52, #1a2d3b); color: white; padding: 3rem 2rem; text-align: center; animation: fadeInUp 1.2s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #D0A369;">Grupo Nialco</h3>
+    <p style="font-size: 1rem; max-width: 700px; margin: auto; color: #ccc;">
+      Calidad, servicio y compromiso. Somos tu aliado comercial de confianza. Distribuimos sabor, construimos relaciones y fortalecemos marcas. Gracias por confiar en nosotros.
+    </p>
+
+    <div style="margin-top: 2rem;">
+      <a href="mailto:contacto@gruponialco.com" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-envelope"></i> contacto@gruponialco.com</a>
+      <a href="tel:+526141234567" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-phone-alt"></i> (614) 123 4567</a>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+
+    <p style="margin-top: 2.5rem; font-size: 0.85rem; color: #aaa;">© 2025 Grupo Nialco. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 </body>
 </html>
