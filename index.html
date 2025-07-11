@@ -1,127 +1,305 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio | Grupo Nialco</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Nialco | Distribución de Calidad</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    .hero {
-      background-image: url('img/fondo-nialco.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #fffaf2, #fce9d8);
+      color: #263D52;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background-color: #ffffffcc;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideDown 0.6s ease-out;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #D0A369;
       display: flex;
       align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #263D52;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #D0A369;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #D0A369, #F7E9D4);
+      display: flex;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
       text-align: center;
-      padding: 0 2rem;
+      padding: 3rem 2rem;
       position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(255, 250, 242, 0.8);
-      z-index: 0;
-    }
-
-    .hero > div {
-      position: relative;
-      z-index: 1;
-      animation: fadeInUp 1.3s ease both;
+      overflow: hidden;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 800;
       margin-bottom: 1rem;
       color: #263D52;
+      animation: bounceIn 1s ease both;
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
+      color: #444;
+      max-width: 600px;
       margin-bottom: 2rem;
-      color: #555;
+    }
+
+    .btn-primary {
+      background-color: #263D52;
+      color: white;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #D0A369;
+      transform: scale(1.05);
+    }
+
+    .animated-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .animated-icons i {
+      position: absolute;
+      font-size: 2rem;
+      color: #ffffff33;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    .animated-icons i:nth-child(1) {
+      top: 20%; left: 10%; animation-delay: 0s; }
+    .animated-icons i:nth-child(2) {
+      top: 40%; left: 80%; animation-delay: 2s; }
+    .animated-icons i:nth-child(3) {
+      top: 70%; left: 30%; animation-delay: 4s; }
+
+    .section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
     }
 
     .features {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
       justify-content: center;
-      animation: fadeInUp 1.5s ease both;
+      gap: 2rem;
     }
 
     .feature {
-      background: white;
-      border-radius: 15px;
+      background: linear-gradient(135deg, #fffdf7, #f9efe1);
       padding: 2rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease;
+      border-radius: 20px;
+      width: 280px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #D0A369;
     }
 
     .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
     }
 
     footer {
-      margin-top: 4rem;
+      background-color: #263D52;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .features { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <span><strong>Grupo Nialco</strong></span>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+ <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: linear-gradient(to right, #ffffffdd, #fdf4e3); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999;">
+  <div class="logo" style="flex: 1;">
+    <img src="img/logo_grupo_nialco.webp" alt="Logo Grupo Nialco" style="height: 90px; display: block;">
+  </div>
+  <nav style="flex: 2; text-align: right;">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="nosotros.html" class="nav-link">Nosotros</a>
+    <a href="catalogo.html" class="nav-link">Catálogo</a>
+    <a href="contacto.html" class="nav-link">Contacto</a>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    margin: 0 1rem;
+    font-weight: 600;
+    color: #263D52;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background-color: #D0A369;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #D0A369;
+    transform: translateY(-2px);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
+
+
 
   <section class="hero">
-    <div>
-      <h1>Distribuimos calidad a tu negocio</h1>
-      <p>Somos Grupo Nialco, expertos en alimentos e insumos confiables.</p>
-      <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
+    <div class="animated-icons">
+      <i class="fas fa-seedling"></i>
+      <i class="fas fa-truck"></i>
+      <i class="fas fa-utensils"></i>
     </div>
+    <h1>Transformamos calidad en confianza</h1>
+    <p>Expertos en insumos y alimentos que fortalecen tu negocio con entregas seguras y productos certificados.</p>
+    <a href="catalogo.html" class="btn-primary">Descubre el Catálogo</a>
   </section>
 
   <section class="section">
-    <h2>Por qué elegirnos</h2>
+    <h2>¿Por qué elegirnos?</h2>
     <div class="features">
       <div class="feature">
-        <h3>Productos seleccionados</h3>
-        <p>Alimentos de calidad certificada y excelente sabor.</p>
+        <i class="fas fa-star"></i>
+        <h3>Calidad garantizada</h3>
+        <p>Solo trabajamos con marcas reconocidas y productos certificados.</p>
       </div>
       <div class="feature">
-        <h3>Atención personalizada</h3>
-        <p>Soluciones adaptadas a las necesidades de tu negocio.</p>
+        <i class="fas fa-headset"></i>
+        <h3>Atención cercana</h3>
+        <p>Te acompañamos en todo el proceso para que compres justo lo que necesitas.</p>
       </div>
       <div class="feature">
-        <h3>Compromiso y puntualidad</h3>
-        <p>Entregas seguras, a tiempo y en condiciones óptimas.</p>
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Entregas a tiempo</h3>
+        <p>La logística es parte de nuestra identidad. Nos importa cumplir.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Grupo Nialco. Todos los derechos reservados.</p>
-  </footer>
+ <footer style="background: linear-gradient(to right, #263D52, #1a2d3b); color: white; padding: 3rem 2rem; text-align: center; animation: fadeInUp 1.2s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #D0A369;">Grupo Nialco</h3>
+    <p style="font-size: 1rem; max-width: 700px; margin: auto; color: #ccc;">
+      Calidad, servicio y compromiso. Somos tu aliado comercial de confianza. Distribuimos sabor, construimos relaciones y fortalecemos marcas. Gracias por confiar en nosotros.
+    </p>
+
+    <div style="margin-top: 2rem;">
+      <a href="mailto:contacto@gruponialco.com" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-envelope"></i> contacto@gruponialco.com</a>
+      <a href="tel:+526141234567" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-phone-alt"></i> (614) 123 4567</a>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+
+    <p style="margin-top: 2.5rem; font-size: 0.85rem; color: #aaa;">© 2025 Grupo Nialco. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 </body>
 </html>
