@@ -1,120 +1,240 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>
-   Catálogo de Productos | Grupo Nialco
-  </title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
-</head>
-<body>
-<header>
-<div class="logo">
-<span>
-<strong>
-      Grupo Nialco
-     </strong>
-</span>
-</div>
-<nav>
-<a href="index.html">
-     Inicio
-    </a>
-<a href="nosotros.html">
-     Nosotros
-    </a>
-<a class="active" href="catalogo.html">
-     Catálogo
-    </a>
-<a href="contacto.html">
-     Contacto
-    </a>
-</nav>
-</header>
-<section class="hero redesigned-hero">
-<div class="hero-container">
-<div class="hero-left">
-<h1>
-      Explora nuestro catálogo
-     </h1>
-<p>
-      Descubre la variedad de productos que ofrecemos con calidad garantizada y atención personalizada.
-     </p>
-</div>
-<div class="hero-right">
-<img alt="Productos Grupo Nialco" onerror="this.src='img/placeholder.webp'" src="img/catalogo_img.webp"/>
-</div>
-</div>
-</section>
-<style>
-   .redesigned-hero {
-    background: linear-gradient(to right, #D0A369, #F7E9D4);
-    padding: 4rem 2rem;
-  }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Productos | Grupo Nialco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fffaf2, #fce9d8);
+      font-family: 'Inter', sans-serif;
+      color: #263D52;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #ffffffcc;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo strong {
+      font-size: 1.5rem;
+      color: #D0A369;
+    }
+    nav a {
+      text-decoration: none;
+      color: #263D52;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #D0A369;
+    }
 
-  .hero-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    align-items: center;
-    justify-content: space-between;
-  }
+    .redesigned-hero {
+      background: linear-gradient(to right, #D0A369, #F7E9D4);
+      padding: 4rem 2rem;
+      animation: fadeIn 1.5s ease-in-out both;
+    }
 
-  .hero-left {
-    flex: 1 1 450px;
-    text-align: left;
-  }
-
-  .hero-left h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #263D52;
-  }
-
-  .hero-left p {
-    font-size: 1.2rem;
-    color: #444;
-    font-weight: 500;
-    max-width: 500px;
-  }
-
-  .hero-right {
-    flex: 1 1 350px;
-    text-align: center;
-    background: white;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  }
-
-  .hero-right img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 768px) {
     .hero-container {
-      flex-direction: column;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-left {
+      flex: 1 1 450px;
+      text-align: left;
+    }
+
+    .hero-left h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #263D52;
+      animation: bounceIn 1s ease both;
+    }
+
+    .hero-left p {
+      font-size: 1.2rem;
+      color: #444;
+      font-weight: 500;
+      max-width: 500px;
+    }
+
+    .hero-right {
+      flex: 1 1 350px;
+      text-align: center;
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .hero-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .catalog-section {
+      padding: 4rem 2rem;
+      animation: fadeIn 1.5s ease-in-out both;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: linear-gradient(to top, #ffffff, #fce9d8);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.6s ease-in-out both;
       text-align: center;
     }
-    .hero-left, .hero-right {
-      flex: 1 1 100%;
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
-    .hero-left h1 {
-      font-size: 2.2rem;
+
+    .img-wrapper {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
-    .hero-left p {
-      font-size: 1rem;
+
+    .img-wrapper img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 8px;
     }
-  }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #263D52;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      color: #444;
+    }
+
+    .product-card ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .product-card ul li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #D0A369;
+      margin-right: 0.5rem;
+    }
+
+    footer {
+      background-color: #263D52;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
   </style>
-<section class="catalog-section">
+</head>
+<body>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: linear-gradient(to right, #ffffffdd, #fdf4e3); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 999;">
+  <div class="logo" style="flex: 1;">
+    <img src="img/logo_grupo_nialco.webp" alt="Logo Grupo Nialco" style="height: 90px; display: block;">
+  </div>
+  <nav style="flex: 2; text-align: right;">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="nosotros.html" class="nav-link">Nosotros</a>
+    <a href="catalogo.html" class="nav-link">Catálogo</a>
+    <a href="contacto.html" class="nav-link">Contacto</a>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    margin: 0 1rem;
+    font-weight: 600;
+    color: #263D52;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background-color: #D0A369;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #D0A369;
+    transform: translateY(-2px);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
+
+  <section class="hero redesigned-hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <h1>Explora Nuestro Catálogo</h1>
+        <p>Conoce todos los productos que ofrecemos agrupados por marca y presentación.</p>
+      </div>
+      <div class="hero-right">
+        <img src="img/catalogo_img.webp" alt="Productos Grupo Nialco" onerror="this.src='img/placeholder.webp'" />
+      </div>
+    </div>
+  </section>
+
+
+<section class="catalog-section" style="padding: 4rem 2rem; animation: fadeIn 1.5s ease-in-out both;">
 <div class="product-grid">
 <div class="product-card">
 <div class="img-wrapper">
@@ -124,11 +244,13 @@
       Chile Jalapeño en Rodajas
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -138,11 +260,13 @@
       Chile Cascabel Curtido
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -152,11 +276,13 @@
       Chile Jalapeño Entero
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -166,11 +292,13 @@
       Chile Jalapeño en Rajas
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -180,11 +308,13 @@
       Chile Güero
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -194,11 +324,13 @@
       Pepinillo Rebanado
      </h3>
 <p>
-      Presentación: 3 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       3 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -208,25 +340,16 @@
       Queso Pizzero
      </h3>
 <p>
-      Presentación: 2 KGS
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Pizzero" onerror="this.src='img/placeholder.webp'" src="img/productos/queso-pizzero.png"/>
-</div>
-<h3>
-      Queso Pizzero
-     </h3>
-<p>
-      Presentación: 5 KGS
-     </p>
-<p>
-      Marca: NIALCO FOODS
-     </p>
+<ul>
+<li>
+       2 KGS
+      </li>
+<li>
+       5 KGS
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -236,11 +359,13 @@
       Imitación Queso Amarillo Rebanado
      </h3>
 <p>
-      Presentación: 1.8 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       1.8 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
@@ -250,162 +375,180 @@
       Imitación Queso Manchego Rebanado
      </h3>
 <p>
-      Presentación: 1.8 KG
-     </p>
-<p>
       Marca: NIALCO FOODS
      </p>
+<ul>
+<li>
+       1.8 KG
+      </li>
+</ul>
 </div>
 <div class="product-card">
 <div class="img-wrapper">
 <img alt="Queso Chihuahua" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHIHUAHUA.webp"/>
 </div>
-<h3>Queso Chihuahua</h3>
-<p>Presentación: 454 GRRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Chihuahua" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHIHUAHUA.webp"/>
-</div>
-<h3>Queso Chihuahua</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Chihuahua" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHIHUAHUA.webp"/>
-</div>
-<h3>Queso Chihuahua</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Chester" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHESTER.webp"/>
-</div>
-<h3>Queso Chester</h3>
-<p>Presentación: 454 GRRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Chester" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHESTER.webp"/>
-</div>
-<h3>Queso Chester</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Chester" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHESTER.webp"/>
-</div>
-<h3>Queso Chester</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Manchego" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MANCHEGO.webp"/>
-</div>
-<h3>Queso Manchego</h3>
-<p>Presentación: 454 GRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Manchego" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MANCHEGO.webp"/>
-</div>
-<h3>Queso Manchego</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Manchego" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MANCHEGO.webp"/>
-</div>
-<h3>Queso Manchego</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Mozarella" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MOZZARELLA.webp"/>
-</div>
-<h3>Queso Mozarella</h3>
-<p>Presentación: 454 GRRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Mozarella" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MOZZARELLA.webp"/>
-</div>
-<h3>Queso Mozarella</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Mozarella" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MOZZARELLA.webp"/>
-</div>
-<h3>Queso Mozarella</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Gouda" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-GOUDA.webp"/>
-</div>
-<h3>Queso Gouda</h3>
-<p>Presentación: 454 GRRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Gouda" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-GOUDA.webp"/>
-</div>
-<h3>Queso Gouda</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Gouda" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-GOUDA.webp"/>
-</div>
-<h3>Queso Gouda</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MONTEREY JACK.webp"/>
-</div>
-<h3>Queso Monterrey Jack</h3>
-<p>Presentación: 454 GRRS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MONTEREY JACK.webp"/>
-</div>
-<h3>Queso Monterrey Jack</h3>
-<p>Presentación: 3.3 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-<div class="product-card">
-<div class="img-wrapper">
-<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MONTEREY JACK.webp"/>
-</div>
-<h3>Queso Monterrey Jack</h3>
-<p>Presentación: 2 KGS</p>
-<p>Marca: MONTELIA</p>
-</div>
-</div>
-</section>
-<footer>
+<h3>
+      Queso Chihuahua
+     </h3>
 <p>
-    © 2025 Grupo Nialco. Todos los derechos reservados.
-   </p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Chester" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-CHESTER.webp"/>
+</div>
+<h3>
+      Queso Chester
+     </h3>
+<p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Manchego" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MANCHEGO.webp"/>
+</div>
+<h3>
+      Queso Manchego
+     </h3>
+<p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Mozarella" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MOZZARELLA.webp"/>
+</div>
+<h3>
+      Queso Mozarella
+     </h3>
+<p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Gouda" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-GOUDA.webp"/>
+</div>
+<h3>
+      Queso Gouda
+     </h3>
+<p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+<div class="product-card">
+<div class="img-wrapper">
+<img alt="Queso Monterrey Jack" onerror="this.src='img/placeholder.webp'" src="img/productos/MONTELIA-MONTEREY JACK.webp"/>
+</div>
+<h3>
+      Queso Monterrey Jack
+     </h3>
+<p>
+      Marca: MONTELIA
+     </p>
+<ul>
+<li>
+       454 GRRS
+      </li>
+<li>
+       3.3 KGS
+      </li>
+<li>
+       2 KGS
+      </li>
+</ul>
+</div>
+</div>
+
+    </div>
+  </section>
+
+ <footer style="background: linear-gradient(to right, #263D52, #1a2d3b); color: white; padding: 3rem 2rem; text-align: center; animation: fadeInUp 1.2s ease-in-out both;">
+  <div style="max-width: 1100px; margin: auto;">
+    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #D0A369;">Grupo Nialco</h3>
+    <p style="font-size: 1rem; max-width: 700px; margin: auto; color: #ccc;">
+      Calidad, servicio y compromiso. Somos tu aliado comercial de confianza. Distribuimos sabor, construimos relaciones y fortalecemos marcas. Gracias por confiar en nosotros.
+    </p>
+
+    <div style="margin-top: 2rem;">
+      <a href="mailto:contacto@gruponialco.com" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-envelope"></i> contacto@gruponialco.com</a>
+      <a href="tel:+526141234567" style="color: #fefefe; margin: 0 1rem; text-decoration: none;"><i class="fas fa-phone-alt"></i> (614) 123 4567</a>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="margin: 0 0.5rem; color: #D0A369;"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+
+    <p style="margin-top: 2.5rem; font-size: 0.85rem; color: #aaa;">© 2025 Grupo Nialco. Todos los derechos reservados.</p>
+  </div>
 </footer>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 </body>
 </html>
+
